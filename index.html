@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stilzcut – Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0A0A0F;
+      --bg2: #0F0F16;
+      --surface: #13131C;
+      --surface2: #18182380;
+      --accent: #C8FF00;
+      --accent2: #8B5CF6;
+      --pink: #FF3CAC;
+      --border: rgba(200,255,0,0.12);
+      --border2: rgba(200,255,0,0.06);
+      --text: #A0A0B8;
+      --text2: #6A6A82;
+      --white: #F0F0F8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+
+    /* Animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200,255,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,255,0,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Glow blob */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(10,10,15,0.98) 0%, var(--bg) 100%);
+    }
+
+    .header-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent2), var(--pink), var(--accent));
+      animation: shimmer 4s linear infinite;
+      background-size: 200% 100%;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+
+    .header-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 40px 24px 36px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Scissors icon */
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 7vw, 58px);
+      color: var(--white);
+      letter-spacing: 4px;
+      line-height: 1;
+    }
+
+    .brand-text h1 span {
+      color: var(--accent);
+    }
+
+    .brand-text .tagline {
+      font-size: 9px;
+      color: var(--text2);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-top: 6px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 9px;
+      color: var(--text2);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: var(--surface);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(200,255,0,0.4); }
+      50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(200,255,0,0); }
+    }
+
+    /* ─── CONTAINER ─── */
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── INTRO CARD ─── */
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.5;
+    }
+
+    .intro-card::after {
+      content: 'PRIVACY';
+      position: absolute;
+      bottom: -20px; right: 20px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 90px;
+      color: rgba(200,255,0,0.03);
+      letter-spacing: 10px;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    /* ─── SECTION HEADINGS ─── */
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(18px, 3vw, 24px);
+      color: var(--white);
+      letter-spacing: 3px;
+      margin: 56px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    h2 .num {
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      opacity: 0.7;
+    }
+
+    h3 {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 26px 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    p {
+      color: var(--text);
+      margin-bottom: 14px;
+      font-size: 13px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15.5px;
+      line-height: 1.8;
+    }
+
+    strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200,255,0,0.25);
+      transition: all 0.2s;
+    }
+
+    a:hover {
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    /* ─── LISTS ─── */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    ul li {
+      padding: 12px 16px 12px 44px;
+      position: relative;
+      color: var(--text);
+      border-bottom: 1px solid var(--border2);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15.5px;
+      line-height: 1.7;
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '›';
+      position: absolute;
+      left: 16px;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.5;
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* ─── HIGHLIGHT CARDS ─── */
+    .alert-box {
+      background: rgba(200,255,0,0.03);
+      border: 1px solid rgba(200,255,0,0.15);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 22px;
+      margin: 14px 0;
+    }
+
+    .alert-box p {
+      color: rgba(200,255,0,0.8);
+      margin: 0;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .summary-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .summary-block ul {
+      border: none;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .summary-block ul li {
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .summary-block ul li:last-child {
+      border-bottom: none;
+    }
+
+    /* ─── FEATURES GRID ─── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .feat-item {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.5px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .feat-item:hover {
+      border-color: rgba(200,255,0,0.25);
+      background: rgba(200,255,0,0.04);
+    }
+
+    .feat-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── CONTACT BOX ─── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-top: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(200,255,0,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .contact-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .contact-email {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .contact-email a {
+      color: var(--white);
+      border-bottom: 1px solid var(--border);
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .contact-email a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ─── SIDE NUMBER ─── */
+    .frame-label {
+      position: fixed;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      color: var(--text2);
+      letter-spacing: 5px;
+      opacity: 0.25;
+      text-transform: uppercase;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 5px;
+      color: var(--text2);
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    footer p {
+      font-size: 10px;
+      color: var(--text2);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'Space Mono', monospace;
+      margin: 0;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 16px auto;
+      max-width: 200px;
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .container { padding: 36px 16px 60px; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .frame-label { display: none; }
+      .intro-card { padding: 24px 20px; }
+      .contact-box { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="frame-label">Stilzcut · AI Haircut Style App ·</div>
+
+<header>
+  <div class="header-bar"></div>
+  <div class="header-inner">
+    <div class="brand">
+      <!-- Scissors icon -->
+      <svg class="app-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="20" fill="rgba(200,255,0,0.04)"/>
+        <rect width="100" height="100" rx="20" fill="none" stroke="rgba(200,255,0,0.15)" stroke-width="1"/>
+        <!-- Scissors blades -->
+        <line x1="50" y1="50" x2="22" y2="22" stroke="#C8FF00" stroke-width="3" stroke-linecap="round"/>
+        <line x1="50" y1="50" x2="78" y2="22" stroke="rgba(200,255,0,0.4)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Handles -->
+        <circle cx="18" cy="27" r="10" fill="none" stroke="#C8FF00" stroke-width="2"/>
+        <circle cx="28" cy="16" r="10" fill="none" stroke="rgba(200,255,0,0.5)" stroke-width="2"/>
+        <!-- Lower blade hint -->
+        <line x1="50" y1="50" x2="72" y2="78" stroke="rgba(139,92,246,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="50" y1="50" x2="28" y2="78" stroke="rgba(139,92,246,0.4)" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Center dot -->
+        <circle cx="50" cy="50" r="4" fill="#C8FF00"/>
+        <circle cx="50" cy="50" r="8" fill="none" stroke="rgba(200,255,0,0.3)" stroke-width="1"/>
+      </svg>
+      <div class="brand-text">
+        <h1>Stilz<span>cut</span></h1>
+        <div class="tagline">Privacy Policy — AI Haircut Style App</div>
+      </div>
+    </div>
+    <div class="badge">
+      <div class="badge-dot"></div>
+      Last updated: April 1, 2026
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="intro-card">
+    <p>
+      This privacy notice for <strong>Stilzcut — AI Haircut Style App</strong> ("we," "us," or "our") explains how we collect, use, disclose, and safeguard your information when you use our mobile application. Stilzcut helps you discover, visualize, and explore haircut styles powered by AI — designed for anyone looking to find their perfect look before stepping into the salon.
+    </p>
+    <p style="margin-bottom:0;">
+      Please read this policy carefully. If you disagree with its terms, please discontinue use of the app.
+    </p>
+  </div>
+
+  <h2><span class="num">00 /</span> Summary of Key Points</h2>
+  <div class="summary-block">
+    <ul>
+      <li>We collect device identifiers and purchase data primarily through RevenueCat to manage your subscription.</li>
+      <li>We do <strong>not</strong> sell your personal data to third parties or use it for advertising.</li>
+      <li>Photos you use for AI style try-ons are processed on-device or via temporary server inference and are <strong>never stored</strong> on our servers.</li>
+      <li>All haircut visualizations and AI results are saved <strong>locally on your device</strong>.</li>
+      <li>You may request deletion of your data at any time by contacting us.</li>
+      <li>We do not knowingly collect data from users under 18 years of age.</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">01 /</span> What Information Do We Collect?</h2>
+
+  <h3>Data Collected Automatically</h3>
+  <ul>
+    <li><strong>Device ID</strong> — Used by RevenueCat to identify your device for subscription management.</li>
+    <li><strong>User ID</strong> — A RevenueCat-assigned identifier to link your account with your subscription status.</li>
+    <li><strong>Purchase &amp; Subscription History</strong> — Records of your Stilzcut Pro subscription processed via Apple App Store / Google Play and RevenueCat.</li>
+    <li><strong>Product Interaction Data</strong> — Anonymized data about how you use the app (e.g., styles browsed, AI features used) to improve the platform.</li>
+    <li><strong>Crash &amp; Performance Data</strong> — Technical diagnostics including crash logs, launch times, and performance metrics to ensure app stability.</li>
+  </ul>
+
+  <h3>Data You Provide</h3>
+  <ul>
+    <li>Stilzcut does <strong>not</strong> require account registration or login.</li>
+    <li>If you contact our support team, we may collect your email address and the content of your message solely to respond to your inquiry.</li>
+  </ul>
+
+  <h3>Photos &amp; AI Processing</h3>
+  <div class="alert-box">
+    <p>📸 Photos you import for AI haircut try-on are used only to generate your style preview. They are processed ephemerally and are NEVER stored on our servers after your result is delivered.</p>
+  </div>
+  <div class="alert-box">
+    <p>✂️ All AI-generated haircut visualizations and saved looks are stored LOCALLY on your device. We do not retain any facial or image data beyond the duration of active processing.</p>
+  </div>
+
+  <h3>Camera &amp; Photo Library Access</h3>
+  <p>Stilzcut may request access to your <strong>camera</strong> and <strong>photo library</strong> to let you take or import photos for AI haircut visualization. These permissions are used exclusively for the core functionality of the app. You may revoke them at any time in your device Settings.</p>
+
+  <h3>Payment Information</h3>
+  <p>All payments are processed directly through the Apple App Store or Google Play. We do <strong>not</strong> have access to your payment card details, bank information, or billing address. RevenueCat receives only confirmation of your subscription status.</p>
+
+  <h2><span class="num">02 /</span> App Features Overview</h2>
+  <p>Stilzcut provides the following core features to help you find your perfect hairstyle:</p>
+  <div class="features-grid">
+    <div class="feat-item"><div class="feat-dot" style="background:#C8FF00;"></div>AI Haircut Try-On</div>
+    <div class="feat-item"><div class="feat-dot" style="background:#8B5CF6;"></div>Style Recommender</div>
+    <div class="feat-item"><div class="feat-dot" style="background:#C8FF00;"></div>Face Shape Analysis</div>
+    <div class="feat-item"><div class="feat-dot" style="background:#FF3CAC;"></div>Haircut Catalog</div>
+    <div class="feat-item"><div class="feat-dot" style="background:#8B5CF6;"></div>Barber Finder</div>
+    <div class="feat-item"><div class="feat-dot" style="background:#C8FF00;"></div>Before &amp; After Compare</div>
+    <div class="feat-item"><div class="feat-dot" style="background:#FF3CAC;"></div>Saved Looks Gallery</div>
+    <div class="feat-item"><div class="feat-dot" style="background:#8B5CF6;"></div>No Watermark Export</div>
+  </div>
+
+  <h2><span class="num">03 /</span> How Do We Use Your Information?</h2>
+  <ul>
+    <li>To verify and manage your Stilzcut Pro subscription status</li>
+    <li>To unlock premium styles, AI features, and tools for Pro subscribers</li>
+    <li>To improve app performance and fix technical issues</li>
+    <li>To analyze aggregate usage patterns and expand our style catalog</li>
+    <li>To respond to customer support inquiries</li>
+    <li>To comply with legal obligations</li>
+  </ul>
+
+  <h2><span class="num">04 /</span> Third-Party Services</h2>
+  <p>We use the following trusted third-party services that may process data on our behalf:</p>
+  <ul>
+    <li><strong>RevenueCat</strong> — Subscription and in-app purchase management. Collects Device ID, User ID, and purchase history. <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy →</a></li>
+    <li><strong>Apple App Store / Google Play</strong> — Payment processing and subscription verification.</li>
+  </ul>
+  <p>We do <strong>not</strong> integrate advertising networks, cross-app analytics SDKs, or data brokers.</p>
+
+  <h2><span class="num">05 /</span> Legal Bases for Processing (GDPR)</h2>
+  <p>If you are located in the European Economic Area (EEA), United Kingdom, or Turkey, we process your data based on:</p>
+  <ul>
+    <li><strong>Performance of a contract</strong> — To deliver your Stilzcut Pro subscription</li>
+    <li><strong>Legitimate interests</strong> — To improve app stability and performance</li>
+    <li><strong>Legal obligations</strong> — To comply with applicable laws</li>
+    <li><strong>Your consent</strong> — Where explicitly required (e.g., camera and photo library access)</li>
+  </ul>
+
+  <h2><span class="num">06 /</span> When Do We Share Your Information?</h2>
+  <p>We do <strong>not</strong> sell your personal data. We may share data only in these limited circumstances:</p>
+  <ul>
+    <li><strong>Service providers</strong> — RevenueCat, as described above, to manage subscriptions</li>
+    <li><strong>Legal requirements</strong> — When required by law, court order, or governmental authority</li>
+    <li><strong>Business transfers</strong> — In the event of a merger, acquisition, or sale of assets</li>
+    <li><strong>Fraud prevention</strong> — To detect and prevent fraudulent transactions</li>
+  </ul>
+
+  <h2><span class="num">07 /</span> Data Retention</h2>
+  <p>We retain your data only as long as necessary to provide our services or as required by law. Subscription records managed by RevenueCat are retained in accordance with their data retention policy. Anonymized usage and diagnostic data may be retained for up to 12 months. AI-processed images are not retained beyond the active inference session.</p>
+
+  <h2><span class="num">08 /</span> How Do We Keep Your Information Safe?</h2>
+  <p>We implement industry-standard security measures including encrypted data transmission (HTTPS/TLS), access controls, and regular security reviews. However, no system is completely secure and we cannot guarantee absolute security of your information.</p>
+
+  <h2><span class="num">09 /</span> Do We Collect Data from Minors?</h2>
+  <p>Stilzcut is not directed at children under the age of 18. We do not knowingly collect personal information from minors. If you believe a minor has provided us with personal data, please contact us and we will take steps to delete such information promptly.</p>
+
+  <h2><span class="num">10 /</span> Your Privacy Rights</h2>
+  <p>Depending on your location, you may have the right to:</p>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Request correction of inaccurate data</li>
+    <li>Request deletion of your data</li>
+    <li>Withdraw consent at any time (including revoking camera / photo library permissions via device Settings)</li>
+    <li>Data portability (receive your data in a structured format)</li>
+    <li>Lodge a complaint with your local data protection authority</li>
+  </ul>
+
+  <h2><span class="num">11 /</span> Data Deletion</h2>
+  <p>To request deletion of your data, please contact us at the email address below. We will process your request within 30 days. Note that some data may need to be retained for legal compliance purposes.</p>
+
+  <h2><span class="num">12 /</span> Cookies and Tracking Technologies</h2>
+  <p>The Stilzcut mobile app does not use browser cookies. Standard mobile identifiers (Device ID) are used solely for subscription management as described above. We do not use cross-app tracking technologies or advertising identifiers (IDFA) for ad targeting.</p>
+
+  <h2><span class="num">13 /</span> Do-Not-Track</h2>
+  <p>As Stilzcut does not engage in cross-site tracking, Do-Not-Track signals are not applicable to our services.</p>
+
+  <h2><span class="num">14 /</span> US Privacy Rights</h2>
+  <p>If you are a US resident, you may request access, correction, or deletion of your personal data by contacting us. We do not sell personal information as defined under the California Consumer Privacy Act (CCPA) or similar state laws.</p>
+
+  <h2><span class="num">15 /</span> Updates to This Policy</h2>
+  <p>We may update this privacy policy from time to time. We will notify you of material changes by updating the "Last updated" date at the top of this document. We encourage you to review this policy periodically.</p>
+
+  <h2><span class="num">16 /</span> Contact Us</h2>
+  <div class="contact-box">
+    <div class="contact-label">Get in Touch</div>
+    <p style="color: var(--text); font-family: 'Cormorant Garamond', serif; margin-bottom: 18px;">Have questions, concerns, or requests regarding your privacy? We aim to respond within 5 business days.</p>
+    <div class="contact-email">
+      <a href="mailto:support@vaykr.qzz.io">support@vaykr.qzz.io</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Stilz<span>cut</span></div>
+    <div class="footer-divider"></div>
+    <p>© 2026 Stilzcut &nbsp;·&nbsp; AI Haircut Style App &nbsp;·&nbsp; All Rights Reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>
